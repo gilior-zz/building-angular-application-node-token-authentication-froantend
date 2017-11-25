@@ -1,0 +1,3 @@
+<div>
+  <mat-card *ngFor="let user of users$|async" [routerLink]="['/profile',user._id]">{{user.name}}</mat-card>
+</div>

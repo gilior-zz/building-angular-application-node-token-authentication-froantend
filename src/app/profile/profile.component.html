@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Profile
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>email: {{(user$|async)?.email}}</mat-list-item>
+          <mat-list-item>name: {{(user$|async)?.name}}</mat-list-item>
+          <mat-list-item>desc: {{(user$|async)?.desc}}</mat-list-item>
+          <mat-list-item>pwd: {{(user$|async)?.pwd}}</mat-list-item>
+        </mat-list>
+
+
+      </mat-card-content>
+
+
+
+    </mat-card>
+  </div>
+</div>
+
