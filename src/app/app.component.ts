@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./api.service";
 import {Observable} from "rxjs/Observable";
 import {Item} from "./message";
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,11 @@ import {Item} from "./message";
 export class AppComponent implements OnInit {
   private items$: Observable<Array<Item>>;
 
-  constructor() {
+  constructor(public  authService: AuthService) {
 
   }
+
+
 
   ngOnInit(): void {
 

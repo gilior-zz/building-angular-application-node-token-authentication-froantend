@@ -6,11 +6,14 @@
         <a routerLink="/">
           LG
         </a>
+        <button mat-button routerLink="/users">Users</button>
 
     </div>
       <div class="col-xs-2 col-xs-push-8">
-        <button mat-button routerLink="/users">Users</button>
-        <button mat-button routerLink="/register">Register</button>
+
+        <button *ngIf="!authService.token" mat-button routerLink="/register">Register</button>
+        <button *ngIf="!authService.token" mat-button routerLink="/login">log in</button>
+        <button *ngIf="authService.token" mat-button (click)="authService.logOut()">log out</button>
       </div>
     </mat-toolbar>
 
