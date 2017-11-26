@@ -5,11 +5,11 @@
         <mat-card-title>New Post</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <form class="example-form" [formGroup]="postForm" (ngSumbit)="onSubmit()">
+        <form class="example-form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
           <mat-form-field class="example-full-width">
             <textarea formControlName="post" matInput placeholder="post"></textarea>
           </mat-form-field>
-          <button role="submit">Send post</button>
+          <button role="submit" mat-raised-button button>New Post</button>
         </form>
       </mat-card-content>
     </mat-card>

@@ -22,10 +22,15 @@ getUsers():Observable<User[]>{
     return res;
   }
 
-  getMessages(): Observable<Item[]> {
-    let res = this.http.get<Item[]>('http://localhost:3000/posts');
+  getMessages(author:string): Observable<Item[]> {
+    let res = this.http.get<Item[]>('http://localhost:3000/posts/'+author);
 
     return res;
+  }
+
+  postMessage(msg:string){
+    let res = this.http.post('http://localhost:3000/post',{msg});
+    res.subscribe();
   }
 
 }

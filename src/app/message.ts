@@ -1,3 +1,3 @@
 export class Item {
-  message: string
+  msg: string
 }

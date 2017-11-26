@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 
 import {AppComponent} from './app.component';
 import {ApiService} from './api.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MessagesComponent} from './messages/messages.component';
 
 import {RoutungRoutingModule} from "./routung-routing.module";
@@ -20,6 +20,7 @@ import { AuthService } from './auth.service';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PostComponent } from './post/post.component';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { PostComponent } from './post/post.component';
     MatListModule,
     RoutungRoutingModule
   ],
-  providers: [ApiService, AuthService],
+  providers: [ApiService, AuthService, {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
