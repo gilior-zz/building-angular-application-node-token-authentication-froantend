@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  path:'https://lg--web.herokuapp.com/'
 };
